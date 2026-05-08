@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>People — Madhavan Lab</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .group-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.5rem 0.9rem;
+      background: rgba(13,30,56,0.62);
+      color: rgba(255,255,255,0.9);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+  </style>
 </head>
 <body>
 
@@ -174,6 +187,46 @@
     </div>
   </section>
 
+  <!-- GROUP PHOTO SLIDESHOW -->
+  <section class="section">
+    <div class="container">
+      <span class="tag">Group Photos</span>
+      <h2>The Lab Over the Years</h2>
+      <div class="divider"></div>
+
+      <div style="position:relative;border-radius:4px;overflow:hidden;background:var(--gray-1);max-width:900px;margin:0 auto;">
+        <div id="group-track" style="display:flex;transition:transform 0.5s ease;">
+          <div style="min-width:100%;position:relative;">
+            <img src="../_img/People/group_2024.jpg" alt="Group photo 2024" style="width:100%;height:480px;object-fit:contain;background:var(--gray-1);display:block;" />
+            <span class="group-caption">The Group — 2024</span>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <img src="../_img/People/group_2022.jpg" alt="Group photo 2022" style="width:100%;height:480px;object-fit:contain;background:var(--gray-1);display:block;" />
+            <span class="group-caption">The Group — 2022</span>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <img src="../_img/People/group_2020.jpg" alt="Group photo 2020" style="width:100%;height:480px;object-fit:contain;background:var(--gray-1);display:block;" />
+            <span class="group-caption">The Group — 2020</span>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <img src="../_img/People/group_2018.jpg" alt="Group photo 2018" style="width:100%;height:480px;object-fit:contain;background:var(--gray-1);display:block;" />
+            <span class="group-caption">The Group — 2018</span>
+          </div>
+        </div>
+        <!-- Arrows -->
+        <button onclick="groupSlide(-1)" aria-label="Previous" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(19,41,75,0.55);color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(19,41,75,0.9)'" onmouseout="this.style.background='rgba(19,41,75,0.55)'">&#8592;</button>
+        <button onclick="groupSlide(1)"  aria-label="Next"     style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(19,41,75,0.55);color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(19,41,75,0.9)'" onmouseout="this.style.background='rgba(19,41,75,0.55)'">&#8594;</button>
+        <!-- Dots -->
+        <div id="group-dots" style="position:absolute;bottom:44px;left:50%;transform:translateX(-50%);display:flex;gap:7px;">
+          <button class="group-dot active" onclick="groupGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.9);border:none;cursor:pointer;padding:0;transition:background 0.2s;"></button>
+          <button class="group-dot" onclick="groupGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);border:none;cursor:pointer;padding:0;transition:background 0.2s;"></button>
+          <button class="group-dot" onclick="groupGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);border:none;cursor:pointer;padding:0;transition:background 0.2s;"></button>
+          <button class="group-dot" onclick="groupGoTo(3)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);border:none;cursor:pointer;padding:0;transition:background 0.2s;"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- JOIN -->
   <section class="section">
     <div class="container" style="text-align:center;max-width:640px;">
@@ -226,6 +279,20 @@
   </div>
 </footer>
 <script src="../js/main.js"></script>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  let _groupIdx = 0;
+  const _groupTotal = 4;
+
+  function groupGoTo(idx) {
+    _groupIdx = (idx + _groupTotal) % _groupTotal;
+    document.getElementById('group-track').style.transform = 'translateX(-' + (_groupIdx * 100) + '%)';
+    document.querySelectorAll('.group-dot').forEach((d, i) => {
+      d.style.background = i === _groupIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.45)';
+    });
+  }
+  function groupSlide(dir) { groupGoTo(_groupIdx + dir); }
+</script>
 </body>
 </html>
