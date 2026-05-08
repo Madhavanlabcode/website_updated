@@ -218,10 +218,31 @@
           <div class="blog-card__body">
             <div class="blog-card__meta"><span class="blog-card__date">Jan 9, 2020</span><span class="blog-card__category">People</span></div>
             <p class="blog-card__title">Congratulations Yulia!</p>
-            <p class="blog-card__excerpt">Congratulations to Yulia Maximenko on completing her PhD Defense! Yulia becomes a Postdoctoral Fellow at NIST, Center for Nanoscale Science and Technology in Maryland, working with Dr. Joseph A. Stroscio.</p>
+            <p class="blog-card__excerpt">Congratulations to Yulia Maximenko defending her thesis, <em>Scanning tunneling microscopy and spectroscopy of topological materials and heterostructures in thin films and devices</em>! Yulia becomes a Postdoctoral Fellow at NIST, Center for Nanoscale Science and Technology in Maryland, working with Dr. Joseph A. Stroscio.</p>
           </div>
         </div>
 
+<!-- Yulia defense — slideshow -->
+        <div class="blog-card">
+          <div class="blog-card__img slideshow" id="slideshow-yulia">
+            <div class="slideshow__track" id="track-yulia">
+              <div class="slideshow__slide"><img src="../_img/blog/Yulia_defense.png" alt="Yulia's thesis defense" /></div>
+              <div class="slideshow__slide"><img src="../_img/blog/Yulia_defense_dinner.png" alt="Defense dinner celebration" /></div>
+            </div>
+            <button class="slideshow__btn slideshow__btn--prev" onclick="slide('yulia',-1)" aria-label="Previous">&#8592;</button>
+            <button class="slideshow__btn slideshow__btn--next" onclick="slide('yulia', 1)" aria-label="Next">&#8594;</button>
+            <div class="slideshow__dots" id="dots-yulia">
+              <button class="slideshow__dot active" onclick="goTo('yulia',0)"></button>
+              <button class="slideshow__dot" onclick="goTo('yulia',1)"></button>
+            </div>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Jan 9, 2020</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Yulia Defends Thesis!</p>
+            <p class="blog-card__excerpt">Congratulations to Yulia Maximenko defending her thesis, <em>Scanning tunneling microscopy and spectroscopy of topological materials and heterostructures in thin films and devices</em>! Yulia becomes a Postdoctoral Fellow at NIST, Center for Nanoscale Science and Technology in Maryland, working with Dr. Joseph A. Stroscio.</p>
+          </div>
+        </div>
+		  
 
         <div class="blog-card">
           <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
@@ -333,6 +354,8 @@
   }
   function slide(id, dir) { goTo(id, (_state[id] || 0) + dir); }
   _state['marisa'] = 0;
+  _state['yulia'] = 0;
 </script>
 </body>
 </html>
+
