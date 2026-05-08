@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Madhavan Lab</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <span class="nav__brand-name">Madhavan Lab</span>
+      <span class="nav__brand-sub">University of Illinois Urbana-Champaign</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="lab.html">The Lab</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="container fade-up">
+      <span class="tag" style="border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);background:transparent;">Blog</span>
+      <h1>Lab News &amp; Blog</h1>
+      <div class="divider"></div>
+      <p>Awards, thesis defenses, publications, outreach, and everything else happening in the Madhavan Lab.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <style>
+        .slideshow { position: relative; overflow: hidden; }
+        .slideshow__track { display: flex; transition: transform 0.4s ease; }
+        .slideshow__slide { min-width: 100%; }
+        .slideshow__slide img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+        .slideshow__btn {
+          position: absolute; top: 50%; transform: translateY(-50%);
+          background: rgba(19,41,75,0.55); color: #fff; border: none;
+          width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+          display: flex; align-items: center; justify-content: center;
+          transition: background 0.2s; z-index: 2; font-size: 1rem;
+        }
+        .slideshow__btn:hover { background: rgba(19,41,75,0.85); }
+        .slideshow__btn--prev { left: 10px; }
+        .slideshow__btn--next { right: 10px; }
+        .slideshow__dots {
+          position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+          display: flex; gap: 6px;
+        }
+        .slideshow__dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: rgba(255,255,255,0.5); border: none; cursor: pointer; padding: 0;
+          transition: background 0.2s;
+        }
+        .slideshow__dot.active { background: #fff; }
+      </style>
+
+      <p style="color:var(--gray-3);font-size:0.85rem;font-style:italic;margin-bottom:2.5rem;">Posts are listed newest first.</p>
+
+
+      <div class="blog-grid">
+       
+
+
+
+<div class="blog-card">
+  <div class="blog-card__img">
+    <img src="../_img/blog/Vidya_NAS_member_2026.jpg" alt="Vidya Elected to National Academy of Sciences" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="blog-card__body">
+    <div class="blog-card__meta"><span class="blog-card__date">April 28, 2026</span><span class="blog-card__category">Award</span></div>
+    <p class="blog-card__title">Vidya Elected to National Academy of Sciences</p>
+    <p class="blog-card__excerpt">Vidya has been elected a member of the <a href="https://www.nasonline.org/" target="_blank" style="color:var(--orange-muted);">National Academy of Sciences</a>, a prestigious distinction earned for her pioneering contribtions to condensed matter research. <a href="https://physics.illinois.edu/news/Madhavan-elected-to-National-Academy" target="_blank" style="color:var(--orange-muted);">Read more at UIUC Physics →</a></p>
+  </div>
+</div>
+
+
+	<!-- Marisa defense — slideshow -->
+        <div class="blog-card">
+          <div class="blog-card__img slideshow" id="slideshow-marisa">
+            <div class="slideshow__track" id="track-marisa">
+              <div class="slideshow__slide"><img src="../_img/blog/Marisa_defense.jpg" alt="Marisa's thesis defense" /></div>
+              <div class="slideshow__slide"><img src="../_img/blog/Marisa_defense_dinner.jpg" alt="Defense dinner celebration" /></div>
+            </div>
+            <button class="slideshow__btn slideshow__btn--prev" onclick="slide('marisa',-1)" aria-label="Previous">&#8592;</button>
+            <button class="slideshow__btn slideshow__btn--next" onclick="slide('marisa', 1)" aria-label="Next">&#8594;</button>
+            <div class="slideshow__dots" id="dots-marisa">
+              <button class="slideshow__dot active" onclick="goTo('marisa',0)"></button>
+              <button class="slideshow__dot" onclick="goTo('marisa',1)"></button>
+            </div>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Apr 22, 2026</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Marisa Defends Thesis!</p>
+            <p class="blog-card__excerpt">Marisa has successfully defended her thesis, <em>STM Studies of the Interplay between Magnetism, Topology, and Heavy Fermion Physics</em>! Good luck to Marisa in her next position as a Postdoc in Dr. Rubio-Verdú's lab at ICFO Barcelona!</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Aug 4, 2025</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Arjun Defends Thesis!</p>
+            <p class="blog-card__excerpt">Arjun has successfully defended his thesis, <em>Laser-coupled Scanning Tunneling Microscopy and Spectroscopy of Quantum Materials and Qubit Defects</em>! He moves on to a Postdoc in the Baldini Lab at UT Austin.</p>
+          </div>
+        </div>
+
+
+<div class="blog-card">
+  <div class="blog-card__img">
+    <img src="../_img/blog/Vidya_beyondthelab_2025.jpg" alt="Vidya Featured in Gordon &amp; Betty Moore Newsletter" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="blog-card__body">
+    <div class="blog-card__meta"><span class="blog-card__date">April 15, 2025</span><span class="blog-card__category">Award</span></div>
+    <p class="blog-card__title">Vidya Featured in Gordon &amp; Betty Moore Newsletter</p>
+    <p class="blog-card__excerpt">Vidya discusses her experience and outlook on research with the <a href="https://www.moore.org/home" style="color:var(--orange-muted);">Gordon &amp; Betty Moore Foundation</a> in <em>Beyond the Lab</em>. <a href="https://www.moore.org/article-detail?newsUrlName=beyond-the-lab-vidya-madhavan-ph.d" target="_blank" style="color:var(--orange-muted);">Read more at Moore.org →</a></p>
+  </div>
+</div>
+
+
+<div class="blog-card">
+  <div class="blog-card__img">
+    <img src="../_img/blog/Vidya_DonaldBiggarWillet_award_10282024.jpg" alt="Vidya Invested as Willett Professor" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="blog-card__body">
+    <div class="blog-card__meta"><span class="blog-card__date">Oct 28, 2024</span><span class="blog-card__category">Award</span></div>
+    <p class="blog-card__title">Vidya Invested as Donald Biggar Willett Professor in Engineering</p>
+    <p class="blog-card__excerpt">Vidya was invested as the Donald Biggar Willett Professor in Engineering. <a href="https://physics.illinois.edu/news/70216" target="_blank" style="color:var(--orange-muted);">Read more at UIUC Physics →</a></p>
+  </div>
+</div>
+
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">May 16, 2023</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Anuva Defends Thesis!</p>
+            <p class="blog-card__excerpt">Anuva has successfully defended her thesis, <em>Exploring the Strongly Correlated Realm of Electrons Using Scanning Tunneling Spectroscopy</em>! She moves on to a Postdoc in the Yacoby Lab at Harvard University.</p>
+          </div>
+        </div>
+
+
+<div class="blog-card">
+  <div class="blog-card__img">
+    <img src="../_img/blog/Arjun_ScottAnderson_award_2022.jpg" alt="Arjun Receives Scott Anderson Award!" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="blog-card__body">
+    <div class="blog-card__meta"><span class="blog-card__date">May 22, 2022</span><span class="blog-card__category">Award</span></div>
+    <p class="blog-card__title">Arjun Receives Scott Anderson Award!</p>
+    <p class="blog-card__excerpt">Arjun Raghavan has won a Scott Anderson Graduate Research Assistant Award from the Dept. of Physics for the 2021–2022 academic year. Congratulations to Arjun!</p>
+  </div>
+</div>
+
+
+
+<div class="blog-card">
+  <div class="blog-card__img">
+    <div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+  <div class="blog-card__body">
+    <div class="blog-card__meta"><span class="blog-card__date">Oct 28, 2024</span><span class="blog-card__category">Award</span></div>
+    <p class="blog-card__title">Rachel Wins NDSEG Fellowship!</p>
+    <p class="blog-card__excerpt">Congratulations to Rachel Birchmier on receiving a prestigious <a href="https://ndseg.sysplus.com/NDSEG/About/" target="_blank" style="color:var(--orange-muted);">NDSEG Fellowship</a> from the US Department of Defense for 2020! This 3-year Fellowship will support Rachel's PhD research. <a href="https://physics.illinois.edu/academics/graduates/blog/37782" target="_blank" style="color:var(--orange-muted);">Read more at UIUC Physics →</a></p>
+  </div>
+</div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">May 2, 2020</span><span class="blog-card__category">Award</span></div>
+            <p class="blog-card__title">Lab Members Win Awards!</p>
+            <p class="blog-card__excerpt">Guannan Chen has won the Scott Anderson Outstanding Graduate Assistant Award for 2020. Undergraduates Zhuozhen Cai and Will Jing have also received Summer 2020 research awards.</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+         <div class="blog-card__img">
+  <img src="../_img/People/Anuva.jpg" alt="Center for Integrated Quantum Materials Talk" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Jul 6, 2020</span><span class="blog-card__category">Award</span></div>
+            <p class="blog-card__title">Anuva is a PPG-MRL Fellow!</p>
+            <p class="blog-card__excerpt">Anuva Aishwarya has won a <a href="https://mrl.illinois.edu/research/opportunities/PPG-MRL-Collaborative-Graduate-Research-Program" target="_blank" style="color:var(--orange-muted);">PPG-MRL Fellowship</a> for the 2020–2021 academic year. Congratulations to Anuva!<a href="https://mrl.illinois.edu/news/congratulations-2020-21-ppg-mrl-assistantship-awardees" target="_blank" style="color:var(--orange-muted);">Read more at UIUC Physics →</a></p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Mar 25, 2020</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Congratulations Sean!</p>
+            <p class="blog-card__excerpt">Congratulations to Sean Howard on his PhD Defense, <em>Scanning Tunneling Microscopy Studies of a Tunable Topological Insulator and Magnetic Weyl Semimetal</em>! Sean joins the Johns Hopkins University Applied Physics Laboratory as a Senior Staff Scientist.</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Jan 9, 2020</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Congratulations Yulia!</p>
+            <p class="blog-card__excerpt">Congratulations to Yulia Maximenko on completing her PhD Defense! Yulia becomes a Postdoctoral Fellow at NIST, Center for Nanoscale Science and Technology in Maryland, working with Dr. Joseph A. Stroscio.</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Jun 11, 2019</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Best Wishes to Zhenyu!</p>
+            <p class="blog-card__excerpt">After four years in the Madhavan Group, Zhenyu Wang heads to a position at the University of Science and Technology of China – Hefei. His work ethic, guidance, and personality will be missed by all.</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Apr 10, 2019</span><span class="blog-card__category">Award</span></div>
+            <p class="blog-card__title">Congratulations to Davide and Anuva</p>
+            <p class="blog-card__excerpt">Davide Iaia has won the Renato Bobone Award recognizing academic excellence of international students. Anuva Aishwarya has been awarded the Scott Anderson Award for outstanding achievement. Congratulations to both!</p>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img"><div class="img-placeholder" style="height:100%;min-height:160px;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Feb 5, 2019</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Good Luck Somesh!</p>
+            <p class="blog-card__excerpt">Somesh Ganguli is accepting a new position as a Postdoc at Aalto University in Finland! We wish him the best of luck with this new opportunity. You will be missed, Somesh!</p>
+          </div>
+        </div>
+
+
+        <!-- VIDEO POSTS -->
+        <div class="blog-card">
+          <div class="blog-card__img">
+  <img src="../_img/blog/CIQM_11292017.jpg" alt="Center for Integrated Quantum Materials Talk" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Nov 29, 2017</span><span class="blog-card__category">Video</span></div>
+            <p class="blog-card__title">Center for Integrated Quantum Materials Talk</p>
+            <p class="blog-card__excerpt">Check out this talk at The Center for Integrated Quantum Materials discussing the interplay of Charge Density Waves, domain walls, and superconductivity.</p>
+            <a href="https://www.youtube.com/watch?v=Aj0MeAmidkA" target="_blank" class="blog-card__read">Watch on YouTube →</a>
+          </div>
+        </div>
+
+
+        <div class="blog-card">
+          <div class="blog-card__img">
+  <img src="../_img/blog/Saturday_physics_10172016.jpg" alt="Center for Integrated Quantum Materials Talk" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Oct 7, 2016</span><span class="blog-card__category">Video</span></div>
+            <p class="blog-card__title">Saturday Physics for Everyone</p>
+            <p class="blog-card__excerpt">An introduction to quantum materials and STM for a general audience — part of the Saturday Physics for Everyone public lecture series.</p>
+            <a href="https://www.youtube.com/watch?v=EkSq2dZ5OYg" target="_blank" class="blog-card__read">Watch on YouTube →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand-name">Madhavan Lab</p>
+        <p class="footer__brand-sub">University of Illinois Urbana-Champaign</p>
+        <p>Department of Physics<br>Materials Research Laboratory<br>Urbana, IL 61801</p>
+        <p style="margin-top:0.8rem;"><a href="mailto:vm1@illinois.edu" style="color:var(--orange-muted);">vm1@illinois.edu</a></p>
+      </div>
+      <div>
+        <p class="footer__heading">Navigate</p>
+        <ul class="footer__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="lab.html">The Lab</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Funding</p>
+        <ul class="footer__links">
+          <li><a href="https://www.nsf.gov/" target="_blank">National Science Foundation</a></li>
+          <li><a href="https://www.moore.org/" target="_blank">Gordon &amp; Betty Moore Foundation</a></li>
+          <li><a href="https://www.energy.gov/" target="_blank">Dept. of Energy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="yr"></span> Madhavan Lab, University of Illinois Urbana-Champaign</p>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const _state = {};
+  function goTo(id, idx) {
+    const track = document.getElementById('track-' + id);
+    const dots  = document.querySelectorAll('#dots-' + id + ' .slideshow__dot');
+    _state[id] = (idx + track.children.length) % track.children.length;
+    track.style.transform = 'translateX(-' + (_state[id] * 100) + '%)';
+    dots.forEach((d, i) => d.classList.toggle('active', i === _state[id]));
+  }
+  function slide(id, dir) { goTo(id, (_state[id] || 0) + dir); }
+  _state['marisa'] = 0;
+</script>
+</body>
+</html>

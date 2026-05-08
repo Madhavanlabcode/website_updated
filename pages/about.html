@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Madhavan Lab</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__brand">
+      <span class="nav__brand-name">Madhavan Lab</span>
+      <span class="nav__brand-sub">University of Illinois Urbana-Champaign</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="lab.html">The Lab</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="container fade-up">
+      <span class="tag" style="border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);background:transparent;">About</span>
+      <h1>About the Lab</h1>
+      <div class="divider"></div>
+      <p>Meet our PI, learn about scanning tunneling microscopy, and discover what our instruments can reveal about quantum matter.</p>
+    </div>
+  </div>
+
+  <!-- PI -->
+  <section class="section">
+    <div class="container">
+      <span class="tag">Principal Investigator</span>
+      <h2>Prof. Vidya Madhavan</h2>
+      <div class="divider"></div>
+      <div class="pi-card">
+        <img src="../_img/People/Vidya.jpg" alt="Prof. Vidya Madhavan" class="pi-card__photo" onerror="this.style.background='var(--gray-1)';this.alt='';" />
+        <div>
+          <p class="pi-card__name">Prof. Vidya Madhavan</p>
+          <p class="pi-card__title">Donald Biggar Willett Professor in Engineering · Department of Physics · University of Illinois Urbana-Champaign</p>
+          <p style="margin-bottom:1rem;">
+            Prof. Madhavan's research focuses on using scanning tunneling microscopy and spectroscopy
+            to understand the electronic properties of quantum materials at the atomic scale. Her group
+            has made important contributions to the understanding of topological materials, strongly
+            correlated electron systems, and unconventional superconductors.
+          </p>
+          <p style="margin-bottom:1rem;">
+            In 2026, Vidya was elected a member of the prestigious National Academy of Sciences. In 2025, she started her role as the newest Department Head of Illinois Physics.
+          </p>
+          <div class="pi-card__links">
+            <a href="mailto:vm1@illinois.edu" class="btn btn--primary">Email</a>
+            <a href="https://physics.illinois.edu/people/directory/profile/vm1" target="_blank" class="btn btn--outline">Faculty Page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS STM -->
+  <section class="section section--gray">
+    <div class="container">
+      <span class="tag">The Technique</span>
+      <h2>What is Scanning Tunneling Microscopy?</h2>
+      <div class="divider"></div>
+      <div class="two-col" style="margin-bottom:3rem;">
+        <div>
+          <p style="margin-bottom:1.2rem;">
+            In a Scanning Tunneling Microscope (STM), a metallic, atomically sharp tip gets
+            extremely close to a sample, allowing electrons to quantum mechanically tunnel from
+            the sample to the tip or vice versa. This tunneling decreases exponentially with
+            distance, giving STM its unparalleled spatial resolution.
+          </p>
+          <p style="margin-bottom:1.2rem;">
+            Due to the quantum mechanical nature of the tunneling, STM is able to gain information
+            about how electronic states vary with energy and position — a quantity known as the
+            local density of states. Since electrons can tunnel from the sample to the tip
+            <em>and</em> from the tip to the sample, STM can study both the <em>occupied</em>
+            and <em>unoccupied</em> states of a material.
+          </p>
+          <p>
+            The high-resolution access to the local density of states and the ability to probe
+            both occupied and unoccupied states makes STM an indispensable tool in the study
+            of quantum materials.
+          </p>
+        </div>
+        <div class="two-col__media">
+          <img src="../_img/homepage/slider/STM2.jpg" alt="STM instrument" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+
+      <div class="stm-explainer">
+        <div class="stm-explainer__card">
+          <div class="stm-explainer__icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h4>Atomic Resolution</h4>
+          <p>STM can resolve individual atoms on a surface, achieving spatial resolutions below 0.1 nm — revealing the true atomic structure of materials.</p>
+        </div>
+        <div class="stm-explainer__card">
+          <div class="stm-explainer__icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h4>Local Density of States</h4>
+          <p>By measuring tunneling current as a function of voltage (dI/dV), we map the local density of states with meV energy resolution and atomic spatial precision.</p>
+        </div>
+        <div class="stm-explainer__card">
+          <div class="stm-explainer__icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Both Occupied &amp; Unoccupied States</h4>
+          <p>Unlike many probes, STM can access states both below and above the Fermi level, providing a complete picture of the electronic structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT STM ACHIEVES -->
+  <section class="section">
+    <div class="container">
+      <span class="tag">What STM Can Achieve</span>
+      <h2>Probing Quantum Phenomena at the Atomic Scale</h2>
+      <div class="divider"></div>
+
+      <div class="two-col two-col--reverse" style="margin-bottom:4rem;">
+        <div>
+          <h3 style="color:var(--blue);margin-bottom:1rem;">Topological Materials</h3>
+          <p style="margin-bottom:1rem;">STM can directly image the hallmark signatures of topological matter — surface states, Dirac cones, and Majorana-bound states — in real space and energy space simultaneously. A material that is topologically non-trivial has an electronic "shape" that is mathematically distinct from a normal material, leading to unique protected states at interfaces.</p>
+        </div>
+        <div class="two-col__media">
+          <img src="../_img/Research/topo-01.png" alt="Dirac Mass Acquisition in a Topological Crystalline Insulator" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+      </div>
+
+      <div class="two-col" style="margin-bottom:4rem;">
+        <div class="two-col__media">
+          <img src="../_img/Research/SrRu2O4.png" alt="QPI in SrRu2O4" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+        <div>
+          <h3 style="color:var(--blue);margin-bottom:1rem;">Unconventional Superconductivity</h3>
+          <p>The superconducting gap, its momentum-space symmetry, and quasiparticle excitations within vortex cores are all directly accessible by low-temperature STS. Since the discovery of high temperature superconductors in the late 80s, unconventional superconductors have hosted several competing emergent phenomena and remain one of the most pressing research areas in condensed matter physics.</p>
+        </div>
+      </div>
+
+      <div class="two-col two-col--reverse">
+        <div>
+          <h3 style="color:var(--blue);margin-bottom:1rem;">Strongly Correlated Electrons</h3>
+          <p>In strongly correlated electron systems, electron-electron interactions cannot be treated as small perturbations. These interactions are responsible for entirely new states of matter like Mott Insulators, Wigner Crystals, and Heavy Fermions. Since strongly correlated materials are known for their very local properties, STM is uniquely suited to study these systems.</p>
+        </div>
+        <div class="two-col__media">
+          <img src="../_img/Research/SrLaIrO4.png" alt="Local disorder in (Sr1-xLax)2IrO4" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand-name">Madhavan Lab</p>
+        <p class="footer__brand-sub">University of Illinois Urbana-Champaign</p>
+        <p>Department of Physics<br>Materials Research Laboratory<br>Urbana, IL 61801</p>
+        <p style="margin-top:0.8rem;"><a href="mailto:vm1@illinois.edu" style="color:var(--orange-muted);">vm1@illinois.edu</a></p>
+      </div>
+      <div>
+        <p class="footer__heading">Navigate</p>
+        <ul class="footer__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="lab.html">The Lab</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Funding</p>
+        <ul class="footer__links">
+          <li><a href="https://www.nsf.gov/" target="_blank">National Science Foundation</a></li>
+          <li><a href="https://www.moore.org/" target="_blank">Gordon &amp; Betty Moore Foundation</a></li>
+          <li><a href="https://www.energy.gov/" target="_blank">Dept. of Energy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="yr"></span> Madhavan Lab, University of Illinois Urbana-Champaign</p>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhavan Lab — Studying Quantum Materials with STM and MBE</title>
+  <meta name="description" content="Studying Quantum Materials with STM and MBE at the University of Illinois Urbana-Champaign." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.5rem 0.9rem;
+      background: rgba(13,30,56,0.62);
+      color: rgba(255,255,255,0.9);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      border: none; cursor: pointer; padding: 0;
+      transition: background 0.2s;
+    }
+    .hero-dot.active { background: #fff; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <span class="nav__brand-name">Madhavan Lab</span>
+      <span class="nav__brand-sub">University of Illinois Urbana-Champaign</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/research.html">Research</a></li>
+      <li><a href="pages/people.html">People</a></li>
+      <li><a href="pages/lab.html">The Lab</a></li>
+      <li><a href="pages/publications.html">Publications</a></li>
+      <li><a href="pages/blog.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="section" style="padding-top:3rem;padding-bottom:3rem;">
+    <div class="container">
+      <div class="home-hero">
+        <div class="home-hero__text">
+          <p class="eyebrow">Scanning Tunneling Microscopy &amp; MBE · UIUC Physics</p>
+          <h1 class="fade-up">Studying Quantum<br>Materials, <em>Atom<br>by Atom</em></h1>
+          <div class="divider fade-up fade-up-1"></div>
+          <p class="fade-up fade-up-2">
+            Welcome to the Madhavan Lab. We are a research group at the University of Illinois
+            studying quantum materials. Using state-of-the-art STM and MBE techniques, we
+            generate insights into the most elusive and impactful materials.
+          </p>
+          <div class="home-hero__btns fade-up fade-up-3">
+            <a href="pages/research.html" class="btn btn--primary">Our Research</a>
+            <a href="pages/publications.html" class="btn btn--outline">Publications</a>
+          </div>
+        </div>
+        <!-- HERO SLIDESHOW -->
+        <div class="fade-up fade-up-4" style="position:relative;border-radius:4px;overflow:hidden;background:var(--gray-2);">
+          <div id="hero-track" style="display:flex;transition:transform 0.5s ease;">
+            <div style="min-width:100%;position:relative;">
+              <img src="_img/homepage/slider/STM1.png" alt="STM 1" style="width:100%;height:420px;object-fit:cover;display:block;" />
+              <span class="hero-caption">STM 1</span>
+            </div>
+            <div style="min-width:100%;position:relative;">
+              <img src="_img/homepage/slider/phonons.png" alt="Determination of phonon modes in PbSe" style="width:100%;height:420px;object-fit:contain;background:#000;display:block;" />
+              <span class="hero-caption">Determination of phonon modes in PbSe</span>
+            </div>
+            <div style="min-width:100%;position:relative;">
+              <img src="_img/homepage/slider/scan153for_site2.jpg" alt="Reconstructed surface of KV₃Sb₅" style="width:100%;height:420px;object-fit:contain;background:#000;display:block;" />
+              <span class="hero-caption">Reconstructed surface of KV₃Sb₅</span>
+            </div>
+            <div style="min-width:100%;position:relative;">
+              <img src="_img/homepage/slider/STM2.jpg" alt="STM 2" style="width:100%;height:420px;object-fit:contain;display:block;" />
+              <span class="hero-caption">STM 2</span>
+            </div>
+            <div style="min-width:100%;position:relative;">
+              <img src="_img/homepage/slider/marisadefense.jpg" alt="The Group!" style="width:100%;height:420px;object-fit:contain;object-position:top;display:block;" />
+              <span class="hero-caption">The Group!</span>
+            </div>
+          </div>
+          <!-- Arrows -->
+          <button onclick="heroSlide(-1)" aria-label="Previous" style="position:absolute;top:50%;left:10px;transform:translateY(-50%);background:rgba(19,41,75,0.55);color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(19,41,75,0.9)'" onmouseout="this.style.background='rgba(19,41,75,0.55)'">&#8592;</button>
+          <button onclick="heroSlide(1)"  aria-label="Next"     style="position:absolute;top:50%;right:10px;transform:translateY(-50%);background:rgba(19,41,75,0.55);color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(19,41,75,0.9)'" onmouseout="this.style.background='rgba(19,41,75,0.55)'">&#8594;</button>
+          <!-- Dots -->
+          <div id="hero-dots" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:7px;">
+            <button class="hero-dot active" onclick="heroGoTo(0)"></button>
+            <button class="hero-dot" onclick="heroGoTo(1)"></button>
+            <button class="hero-dot" onclick="heroGoTo(2)"></button>
+            <button class="hero-dot" onclick="heroGoTo(3)"></button>
+            <button class="hero-dot" onclick="heroGoTo(4)"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="highlights-bar">
+    <div class="container">
+      <div class="highlights-bar__inner">
+        <div class="highlights-bar__item">
+          <span class="highlights-bar__num">80+</span>
+          <span class="highlights-bar__label">Publications</span>
+        </div>
+        <div class="highlights-bar__item">
+          <span class="highlights-bar__num">5</span>
+          <span class="highlights-bar__label">STM<br>Instruments</span>
+        </div>
+        <div class="highlights-bar__item">
+          <span class="highlights-bar__num">3</span>
+          <span class="highlights-bar__label">MBE Growth<br>Chambers</span>
+        </div>
+        <div class="highlights-bar__item">
+          <span class="highlights-bar__num">20+</span>
+          <span class="highlights-bar__label">Current Lab<br>Members</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH HIGHLIGHTS -->
+  <section class="section section--gray">
+    <div class="container">
+      <span class="tag">Latest Research Highlights</span>
+      <h2>Recent Work</h2>
+      <div class="divider"></div>
+
+      <div class="two-col" style="margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--gray-2);">
+        <div class="two-col__media">
+          <img src="_img/homepage/Kagome06122024.png" alt="Optical Manipulation of Charge Order in RbV3Sb5" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+        <div>
+          <p class="pub-card__journal">Nature 631, 60–66 (2024)</p>
+          <h3 style="color:var(--blue);margin-bottom:0.8rem;">Optical Manipulation of Charge Order in RbV₃Sb₅ Visualized by Laser STM</h3>
+          <p style="margin-bottom:1.2rem;">We have discovered a novel technique to optically manipulate charge order in the kagome superconductor RbV₃Sb₅. Using our unique laser-coupled STM set-up, we apply linearly polarized light along high-symmetry directions and find that the relative intensities of CDW peaks can be reversibly switched. Our laser STM technique opens doors toward dynamical optical control of complex quantum phenomena in quantum materials.</p>
+          <a href="https://www.nature.com/articles/s41586-024-07519-5" target="_blank" class="btn btn--outline">Read Paper →</a>
+        </div>
+      </div>
+
+      <div class="two-col two-col--reverse" style="margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--gray-2);">
+        <div class="two-col__media">
+          <img src="_img/homepage/UTe2_Figure_01202024.png" alt="CDW in UTe2" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+        <div>
+          <p class="pub-card__journal">Nature 618, 918–923 (2023)</p>
+          <h3 style="color:var(--blue);margin-bottom:0.8rem;">Charge-Density-Waves Sensitive to Magnetic Fields in UTe₂</h3>
+          <p style="margin-bottom:1.2rem;">We have found evidence for an unusual charge-density-wave order in the heavy-fermion, spin-triplet superconductor UTe₂. This CDW is incommensurate and weakens in intensity with increasing magnetic field. In collaboration with theorists, we have constructed a Ginzburg-Landau model for a uniform spin-triplet superconductor coexisting with three triplet pair-density-wave states.</p>
+          <a href="https://www.nature.com/articles/s41586-023-06005-8" target="_blank" class="btn btn--outline">Read Paper →</a>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="two-col__media">
+          <img src="_img/homepage/SmB6_Website_09252022.png" alt="Spin-Selective Tunneling from SmB6" style="width:100%;height:100%;object-fit:contain;background:#f8f7f5;" />
+        </div>
+        <div>
+          <p class="pub-card__journal">Science 377, 1218–1222 (2022)</p>
+          <h3 style="color:var(--blue);margin-bottom:0.8rem;">Spin-Selective Tunneling from a Nanowire STM Tip</h3>
+          <p style="margin-bottom:1.2rem;">By fabricating nanowire tips with the putative Kondo topological insulator SmB₆, we have been able to observe spin-polarized tunneling with a non-magnetic tip onto the surface of the antiferromagnet FeTe. This novel technique will help pave the way for cutting-edge applications with topological insulators.</p>
+          <a href="https://www.science.org/doi/10.1126/science.abj8765" target="_blank" class="btn btn--outline">Read Paper →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <a href="pages/publications.html" class="btn btn--primary">View All Publications</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- NEWS + JOIN -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="tag">Recent News</span>
+          <h2>Lab News</h2>
+          <div class="divider"></div>
+          <div class="news-list">
+
+	  <div class="news-item">
+              <span class="news-item__date">Apr 2026</span>
+              <div>
+                <p class="news-item__title">Vidya Elected to National Academy of Sciences</p>
+                <p class="news-item__excerpt">Vidya has been elected a member of the <a href="https://www.nasonline.org/" target="_blank" style="color:var(--orange-muted);">National Academy of Sciences</a>, a prestigious distinction earned for her pioneering contribtions to condensed matter research. <a href="https://physics.illinois.edu/news/Madhavan-elected-to-National-Academy" target="_blank" style="color:var(--orange-muted);">Read more at UIUC Physics →</a></p>
+              </div>
+            </div>
+
+
+            <div class="news-item">
+              <span class="news-item__date">Apr 2026</span>
+              <div>
+                <p class="news-item__title">Marisa Defends Thesis!</p>
+                <p class="news-item__excerpt">Marisa successfully defended her thesis, <em>STM Studies of the Interplay between Magnetism, Topology, and Heavy Fermion Physics</em>. She will be a Postdoc at ICFO Barcelona.</p>
+              </div>
+            </div>
+
+
+            <div class="news-item">
+              <span class="news-item__date">Aug 2025</span>
+              <div>
+                <p class="news-item__title">Arjun Defends Thesis!</p>
+                <p class="news-item__excerpt">Arjun defended his thesis on laser-coupled STM spectroscopy. He moves on to a Postdoc in the Baldini Lab at UT Austin.</p>
+              </div>
+            </div>
+
+
+<div class="news-item">
+              <span class="news-item__date">Apr 2025</span>
+              <div>
+                <p class="news-item__title">Vidya Featured in Gordon &amp; Betty Moore Newsletter</p>
+                <p class="news-item__excerpt">Vidya discusses her experience and outlook on research with the <a href="https://www.moore.org/home" style="color:var(--orange-muted);">Gordon &amp; Betty Moore Foundation</a> in <em>Beyond the Lab</em>. <a href="https://www.moore.org/article-detail?newsUrlName=beyond-the-lab-vidya-madhavan-ph.d" target="_blank" style="color:var(--orange-muted);">Read more at Moore.org →</a></p>
+              </div>
+            </div>
+
+
+
+
+          </div>
+          <a href="pages/blog.html" style="margin-top:2rem;display:inline-block;" class="btn btn--outline">All Blog Posts</a>
+        </div>
+        <div>
+          <span class="tag">Join Us</span>
+          <h2>Interested In Our Work?</h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:1.2rem;">We are always looking for motivated graduate students and postdoctoral researchers with a passion for condensed matter physics and nanoscale science.</p>
+          <p style="margin-bottom:2rem;">Prospective graduate students should apply through the <a href="https://physics.illinois.edu/admissions/graduates" target="_blank" style="color:var(--orange-muted);text-decoration:underline;">UIUC Physics graduate program</a>. Postdoctoral applicants should send a CV and brief statement of research interests directly to Prof. Madhavan.</p>
+          <a href="mailto:vm1@illinois.edu" class="btn btn--primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNDING -->
+  <section class="section section--gray" style="padding:2.5rem 0;">
+    <div class="container">
+      <div style="display:flex;gap:2.5rem;align-items:center;justify-content:center;flex-wrap:wrap;">
+        <a href="https://physics.illinois.edu" target="_blank"><img src="_img/uofi_physics.png" alt="UIUC Physics" style="height:56px;object-fit:contain;" /></a>
+        <a href="https://www.nsf.gov" target="_blank"><img src="_img/nsf_logo.png" alt="NSF" style="height:56px;object-fit:contain;" /></a>
+        <a href="https://www.moore.org" target="_blank"><img src="_img/moore_logo.png" alt="Gordon and Betty Moore Foundation" style="height:56px;object-fit:contain;" /></a>
+        <a href="https://www.energy.gov" target="_blank"><img src="_img/doe_logo.png" alt="Department of Energy" style="height:56px;object-fit:contain;" /></a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand-name">Madhavan Lab</p>
+        <p class="footer__brand-sub">University of Illinois Urbana-Champaign</p>
+        <p>Department of Physics<br>Materials Research Laboratory<br>Urbana, IL 61801</p>
+        <p style="margin-top:0.8rem;"><a href="mailto:vm1@illinois.edu" style="color:var(--orange-muted);">vm1@illinois.edu</a></p>
+      </div>
+      <div>
+        <p class="footer__heading">Navigate</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/research.html">Research</a></li>
+          <li><a href="pages/people.html">People</a></li>
+          <li><a href="pages/lab.html">The Lab</a></li>
+          <li><a href="pages/publications.html">Publications</a></li>
+          <li><a href="pages/blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Funding</p>
+        <ul class="footer__links">
+          <li><a href="https://www.nsf.gov/" target="_blank">National Science Foundation</a></li>
+          <li><a href="https://www.moore.org/" target="_blank">Gordon &amp; Betty Moore Foundation</a></li>
+          <li><a href="https://www.energy.gov/" target="_blank">Dept. of Energy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="yr"></span> Madhavan Lab, University of Illinois Urbana-Champaign</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  let _heroIdx = 0;
+  const _heroTotal = 5;
+
+  function heroGoTo(idx) {
+    _heroIdx = (idx + _heroTotal) % _heroTotal;
+    document.getElementById('hero-track').style.transform = 'translateX(-' + (_heroIdx * 100) + '%)';
+    document.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('active', i === _heroIdx));
+  }
+  function heroSlide(dir) { heroGoTo(_heroIdx + dir); }
+
+  // Auto-advance every 5 seconds
+  setInterval(() => heroSlide(1), 5000);
+</script>
+</body>
+</html>
