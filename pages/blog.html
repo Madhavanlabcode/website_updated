@@ -68,6 +68,36 @@
           transition: background 0.2s;
         }
         .slideshow__dot.active { background: #fff; }
+
+        /* Load More */
+        .blog-card.hidden { display: none; }
+        .load-more-wrap {
+          text-align: center;
+          margin-top: 2.5rem;
+        }
+        #load-more-btn {
+          display: inline-block;
+          padding: 0.7rem 2rem;
+          background: transparent;
+          border: 2px solid var(--orange-muted, #c0622f);
+          color: var(--orange-muted, #c0622f);
+          font-size: 0.9rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          border-radius: 3px;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s;
+        }
+        #load-more-btn:hover {
+          background: var(--orange-muted, #c0622f);
+          color: #fff;
+        }
+        #post-counter {
+          display: block;
+          margin-top: 0.8rem;
+          font-size: 0.8rem;
+          color: var(--gray-3, #888);
+        }
       </style>
 
       <p style="color:var(--gray-3);font-size:0.85rem;font-style:italic;margin-bottom:2.5rem;">Posts are listed newest first.</p>
@@ -436,7 +466,14 @@
   </div>
 </div>
 
+      </div><!-- /.blog-grid -->
+
+      <!-- Load More -->
+      <div class="load-more-wrap">
+        <button id="load-more-btn">Load More Posts</button>
+        <span id="post-counter"></span>
       </div>
+
     </div>
   </section>
 
@@ -477,9 +514,12 @@
     </div>
   </div>
 </footer>
+
 <script src="../js/main.js"></script>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Slideshow logic
   const _state = {};
   function goTo(id, idx) {
     const track = document.getElementById('track-' + id);
@@ -490,7 +530,40 @@
   }
   function slide(id, dir) { goTo(id, (_state[id] || 0) + dir); }
   _state['marisa'] = 0;
-  _state['yulia'] = 0;
+  _state['yulia']  = 0;
+
+  // Load More logic
+  (function () {
+    const PER_PAGE = 6;
+    const cards = Array.from(document.querySelectorAll('.blog-grid .blog-card'));
+    const btn   = document.getElementById('load-more-btn');
+    const counter = document.getElementById('post-counter');
+    let shown = 0;
+
+    function updateCounter() {
+      const remaining = cards.length - shown;
+      counter.textContent = shown + ' of ' + cards.length + ' posts shown';
+      if (remaining <= 0) {
+        btn.style.display = 'none';
+        counter.textContent = 'All ' + cards.length + ' posts shown';
+      }
+    }
+
+    function showNext() {
+      const batch = cards.slice(shown, shown + PER_PAGE);
+      batch.forEach(function (card) {
+        card.classList.remove('hidden');
+      });
+      shown += batch.length;
+      updateCounter();
+    }
+
+    // Hide all cards initially, then show first batch
+    cards.forEach(function (card) { card.classList.add('hidden'); });
+    showNext();
+
+    btn.addEventListener('click', showNext);
+  })();
 </script>
 </body>
 </html>
