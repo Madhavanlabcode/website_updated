@@ -106,7 +106,28 @@
       <div class="blog-grid">
        
 
+	<!-- Yun-Tzu defense — slideshow -->
+        <div class="blog-card">
+          <div class="blog-card__img slideshow" id="slideshow-yuntzu">
+            <div class="slideshow__track" id="track-yuntzu">
+              <div class="slideshow__slide"><img src="../_img/blog/YunTzu_defense.jpg" alt="Yun-Tzu's thesis defense" /></div>
+              <div class="slideshow__slide"><img src="../_img/blog/YunTzu_defense_group.jpg" alt="Defense group photo" /></div>
+            </div>
+            <button class="slideshow__btn slideshow__btn--prev" onclick="slide('yuntzu',-1)" aria-label="Previous">&#8592;</button>
+            <button class="slideshow__btn slideshow__btn--next" onclick="slide('yuntzu', 1)" aria-label="Next">&#8594;</button>
+            <div class="slideshow__dots" id="dots-yuntzu">
+              <button class="slideshow__dot active" onclick="goTo('yuntzu',0)"></button>
+              <button class="slideshow__dot" onclick="goTo('yuntzu',1)"></button>
+            </div>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta"><span class="blog-card__date">Apr 22, 2026</span><span class="blog-card__category">People</span></div>
+            <p class="blog-card__title">Yun-Tzu Defends Thesis!</p>
+            <p class="blog-card__excerpt">Yun-Tzu Hsu has successfully defended her thesis, <em>Scanning Tunneling Microscopy Studies of Strong Correlations in Monolayer Transition Metal Dichalcogenides and Strain-Engineered Graphene</em>! We are very excited to see where Yun-Tzu's career takes her next.</p>
+          </div>
+        </div>
 
+		  
 
 <div class="blog-card">
   <div class="blog-card__img">
@@ -276,11 +297,11 @@
 		  
 <div class="blog-card">
   <div class="blog-card__img">
-    <img src="../_img/blog/Vidya_CIFAR.jpg" alt="Vidya Elected to CIFAR Fellow" style="width:100%;height:100%;object-fit:cover;" />
+    <img src="../_img/blog/Vidya_CIFAR.jpg" alt="Vidya Elected CIFAR Fellow" style="width:100%;height:100%;object-fit:cover;" />
   </div>
   <div class="blog-card__body">
     <div class="blog-card__meta"><span class="blog-card__date">May 30, 2021</span><span class="blog-card__category">Award</span></div>
-    <p class="blog-card__title">Vidya Elected to CIFAR Fellow</p>
+    <p class="blog-card__title">Vidya Elected CIFAR Fellow</p>
     <p class="blog-card__excerpt">Vidya has been elected a Fellow of the <a href="https://cifar.ca/" target="_blank" style="color:var(--orange-muted);">Canadian Institute for Advanced Research</a> for her innovative STM research of quantum materials.</p>
   </div>
 </div>
@@ -553,6 +574,7 @@
     dots.forEach((d, i) => d.classList.toggle('active', i === _state[id]));
   }
   function slide(id, dir) { goTo(id, (_state[id] || 0) + dir); }
+  _state['yuntzu']  = 0;
   _state['marisa'] = 0;
   _state['yulia']  = 0;
 
