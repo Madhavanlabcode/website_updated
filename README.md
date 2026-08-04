@@ -6,31 +6,21 @@ Static website for the Madhavan Lab, Department of Physics, University of Illino
 
 ```
 madhavan-lab/
-├── index.html              ← Home page
+├── index.html      
 ├── css/
-│   └── style.css           ← All styles
+│   └── style.css           
 ├── js/
-│   └── main.js             ← Navigation & shared JS
-├── images/                 ← Put all your images here
+│   └── main.js            
+├── images/                 
 │   └── (favicon.png, photos, STM images, etc.)
 └── pages/
-    ├── about.html          ← About / PI page
-    ├── research.html       ← Research topics
-    ├── people.html         ← Lab members + alumni
-    ├── lab.html            ← Instruments
-    ├── publications.html   ← Publications by year
-    └── blog.html           ← Blog / news
+    ├── about.html        
+    ├── research.html       
+    ├── people.html         
+    ├── lab.html            
+    ├── publications.html   
+    └── blog.html           
 ```
-
-## Hosting on GitHub Pages
-
-1. Create a new GitHub repository named `madhavan-lab` (or your preferred name).
-2. Upload all files in this folder to the repository (maintain the folder structure).
-3. Go to **Settings → Pages** in your repository.
-4. Under "Source", select **Deploy from a branch** → `main` → `/ (root)`.
-5. Click Save. Your site will be live at `https://<your-username>.github.io/madhavan-lab/`.
-
-**Custom domain**: If you have `madhavan.physics.illinois.edu` or similar, add a `CNAME` file at the root containing just your domain name.
 
 ## How to Edit
 
